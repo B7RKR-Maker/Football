@@ -37,3 +37,11 @@ Alternatively, open the project in Android Studio (JDK 17, Android SDK 35) and r
 - `minSdk=26`, `targetSdk=35`, Compose BOM 2025.04.01, AGP 8.9.2, Kotlin 2.1.20.
 - Data is currently saved to app-local SharedPreferences. A Room migration will be appropriate before major feature expansion.
 - Next engineering step: agree on a licensed football API and create a provider/repository layer, then integrate live match data and fixture/calendar synchronisation.
+
+
+### v0.1.2 build correction
+Opt in to the experimental Material 3 API used by CenterAlignedTopAppBar in SetupScreen. This fixes the Kotlin compiler error previously reported at MainActivity.kt:158. Build not independently verified.
+
+
+### v0.1.3 build fix
+Added file-level and module-level Material 3 experimental API opt-in. The GitHub workflow verifies these changes are present before compiling. If the verification step fails, the repository still contains an older project revision.

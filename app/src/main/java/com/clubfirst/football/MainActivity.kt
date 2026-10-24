@@ -1,3 +1,5 @@
+@file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+
 package com.clubfirst.football
 
 import android.content.Intent
@@ -145,13 +147,14 @@ private fun FootballApp() {
                     Text("Followed clubs and leagues", fontWeight = FontWeight.SemiBold)
                     Text("Change your selection at any time.", style = MaterialTheme.typography.bodySmall)
                     OutlinedButton(onClick = { showSettings = false; showOnboarding = true }) { Text("Manage following") }
-                    Text("Preview 0.1.0 • No live-data provider connected", style = MaterialTheme.typography.labelSmall)
+                    Text("Preview 0.1.3 • No live-data provider connected", style = MaterialTheme.typography.labelSmall)
                 }
             }, confirmButton = { TextButton(onClick = { showSettings = false }) { Text("Close") } })
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable private fun SetupScreen(followed: MutableList<String>, followedLeagues: MutableList<String>, onDone: () -> Unit) {
     var query by remember { mutableStateOf("") }
     var leagueTab by remember { mutableStateOf(false) }
